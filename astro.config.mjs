@@ -7,5 +7,15 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://lennmo09.github.io',
   // base: '/my-repo',
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind()],
+  markdown: {
+    remarkPlugins: [
+        'remark-math',
+    ],
+    rehypePlugins: [
+        ['rehype-katex', {
+        // Katex plugin options
+        }]
+    ]
+  }
 });
