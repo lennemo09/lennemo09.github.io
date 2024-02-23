@@ -1,27 +1,289 @@
-## Explaining the name itself.
+# Astrofy | Personal Portfolio Website Template
 
-[Tom Scott](https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A) defines the _'onosecond'_ as:
-> The second after you make a terrible mistake. The second when you realise what you just did and that there’s nothing you can do about it, the second when all the now-inevitable consequences flash through your mind. It is the second after you send a text message to the wrong person, after you delete the wrong file, after you spill the secret that you thought they already knew. The “onosecond” is that stomach-dropping, breath-stopping moment when all you can do is say “oh, no”.
+![Astrofy | Personal Porfolio Website Template](public/social_img.webp)
 
-The _Onominute_ (or 60 _onoseconds_) is a collection of my documentation and notes for learning various scientific topics. The name itself refers to the average number of times I realized my mistakes while learning a new topic, in a single sitting.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
 
-<img src="https://cf.geekdo-images.com/camo/cba429883803dadea626df689cdbf3ddc0dc1bba/68747470733a2f2f692e696d6775722e636f6d2f456161485557462e6a7067" width="300" height="300">
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-size:12px;line-height:1.2;display:inline-block;border-radius:3px" href="https://www.instagram.com/webcomic_name/?hl=en" target="_blank" rel="noopener noreferrer" title="Artist: Alex Norris"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Artist: Alex Norris</span></a>
+## Demo
 
-## Some stuff 'bout me!
+View a live demo of [Astrofy](https://astrofy-template.netlify.app/)
 
-As an aspiring computational scientist, I love to learn and read about mathematics, natural sciences, visual arts, design theory, and philosophy (especially metaphysics). My name is Nhan Luong (_Luong Ha Tri Nhan_) but most people know me as Len. I'm a Vietnamese student pursuing an Honours year in Computer Science at Monash University in Melbourne, Australia.
+## Installation
 
-Occasionally, I tend to just pick up my camera to go take random photos of cats or regular daily life stuff happening on the streets. I'm also trying to re-learn the piano, which I regrettably gave up on as a kid.
+Run the following command in your terminal
 
-My academic interests are scientific computing (specifically astronomy and physics), computer graphics (simulation and visualisation), and theoretical computer science. I'm hoping to be able to get involved in research projects in those areas!
+```bash
+pnpm install
+```
 
-From now until July 2022, I will be focusing on my Honours thesis supervised by [Professor Daniel Price](https://users.monash.edu.au/~dprice/) and [Dr. Max Cordeil](https://ialab.it.monash.edu/~maxc/), which is in interactive/immersive visualisation of particle-based fluid simulation for astrophysics. We will be visualising Prof. Daniel's [Smoothed Particle Hydrodynamics (SPH) simulations](https://users.monash.edu.au/~dprice/#research) using the open-source [IATK Unity3D toolkit](https://github.com/MaximeCordeil/IATK) developed by Dr. Max to interact with the fluid simulation in Virtual Reality.
+Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
 
-I don't use IDE, not because I'm **"hardcore"**, but simply because I never learned to use them and I'm still too scared to do so (they look very intimidating!). My favorite text editor is [Atom](https://atom.io/), I have been using `vim` for a bit to do my C classes but I mainly stick with Atom due to its massive community support, and because it looks aesthetically pleasing (I use a custom version of `Atom Material` for the UI and custom `One Dark` for syntax highlighting).
+```bash
+pnpm run dev
+```
 
-## What is this site about, then?
+## Tech Stack
 
-This will be the main platform where I will be publishing the notes I have taken while trying to learn new subjects and topics to the masses. I want to write them in a way that is accessible and understandable by as many people as possilbe (meaning minimal prerequisite knowledge), not just because I want more people to discover and appreciate the beauty of science but also because it will vastly improve my understanding of the topic. As this is meant as a shared learning experience, not a go-to teaching material, there will **definitely** be errors and I welcome all the feedbacks and suggestions that you may have while reading my contents. Please feel free to email me at lennemo09@gmail.com if you ever notice a mistake!
+- [Astro](https://astro.build)
+- [tailwindcss](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
 
-I will hopefully try to post updates on my projects if there are any, as I want to document my experience working on them as well, recording all the mistakes and challenges I might have faced so it can be helpful in the future for me or some lost soul Googling for the same problem.
+## Project Structure
+
+```php
+├── src/
+│   ├── components/
+│   │   ├── cv/
+│   │   │   ├── TimeLine
+│   │   ├── BaseHead.astro
+│   │   ├── Card.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── HorizontalCard.astro
+│   │   └── SideBar.astro
+│   │   └── SideBarMenu.astro
+│   │   └── SideBarFooter.astro
+│   ├── content/
+│   │   ├── blog/
+│   │   │   ├── post1.md
+│   │   │   ├── post2.md
+│   │   │   └── post3.md
+│   │   ├── store/
+│   │   │   ├── item1.md
+│   │   │   ├── item2.md
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   │   └── PostLayout.astro
+│   └── pages/
+│   │   ├── blog/
+│   │   │   ├── [...page].astro
+│   │   │   ├── [slug].astro
+│   │   └── cv.astro
+│   │   └── index.astro
+│   │   └── projects.astro
+│   │   └── rss.xml.js
+│   ├── styles/
+│   │   └── global.css
+│   └── config.ts
+├── public/
+│   ├── favicon.svg
+│   └── profile.webp
+│   └── social_img.webp
+├── astro.config.mjs
+├── tailwind.config.cjs
+├── package.json
+└── tsconfig.json
+```
+
+### Site config
+
+You can change global site configuration on '/src/config.ts' file:
+
+- **SITE_TITLE**: Default pages title.
+- **SITE_DESCRIPTION**: Default pages title.
+- **GENERATE_SLUG_FROM_TITLE**: By default Astrofy will generate the blog slug pages base on the article name. Set this var to false if you want to use the Astro file base (Compatible with Astrofy older versions).
+- **TRANSITION_API**: Enable and disable transition API
+
+### Components usage
+
+#### Layout Components
+
+The `BaseHead`, `Footer`, `Header`, and `SideBar` components are already included in the layout system. To change the website content you can edit the content of these components.
+
+##### SideBar
+
+In the Sidebar you can change your profilePicture, links to all your website pages, and your social icons.
+
+You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
+
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
+
+To add a new page in the sidebar go to the `SideBarMenu` component.
+
+```
+<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+
+```
+
+**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
+
+#### TimeLine
+
+The timeline components are used to confirm the CV.
+
+```html
+<div class="time-line-container">
+  <TimeLineElement title="Element Title" subtitle="Subtitle">
+    Content that can contain
+    <div>divs</div>
+    and <span>anything else you want</span>.
+  </TimeLineElement>
+  ...
+</div>
+```
+
+#### Card & HorizontalCard
+
+The cards are primarly used for the Project and the Blog components. They include a picture, a title, and a description. 
+
+```html
+<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
+URL" target="Optional link target (_blank default)" badge="Optional badge"
+tags={['Array','of','tags']} />
+```
+
+#### HorizontalCard Shop Item
+
+
+This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
+
+```html
+<HorizontalShopItem
+  title="Item Title"
+  img="imge_url"
+  desc="Item description"
+  pricing="current_price"
+  oldPricing="old_price"
+  checkoutUrl="external store checkout url"
+  badge="Optional badge"
+  url="item details url"
+  custom_link="Custom link url"
+  custom_link_label="Cutom link btn label"
+  target="Optional link target (_self default)"
+/>
+```
+
+#### Adding a Custom Component
+
+To add a custom component, you can create a .astro file in the components folder under the source folder. 
+
+Components must follow this template. The ```---``` represents the code fence and uses Javascript and can be used for imports. 
+
+The HTML component is the actual style of your new component. 
+
+```html
+---
+// Component Script (JavaScript)
+---
+<!-- Component Template (HTML + JS Expressions) -->
+```
+
+For more details, see the [astro components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
+
+### Layouts
+
+Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
+
+The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
+
+### Content
+
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+
+#### config.ts
+
+Where you need to define your content collections, we define our content schemas too.
+
+#### Blog
+
+Add your `md` blog post in the `/content/blog/` folder.
+
+##### Post format
+
+Add code with this format in the top of each post file.
+
+```
+---
+title: "Post Title"
+description: "Description"
+pubDate: "Post date format(Sep 10 2022)"
+heroImage: "Post Hero Image URL"
+---
+```
+
+### Pages
+
+#### Blog
+
+Blog uses Astro's content collection to query post's `md`.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+
+##### [slug].astro
+
+The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
+
+#### Shop
+
+Add your `md` item in the `/pages/shop/` folder.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you include inside this folder.
+
+##### Item format
+
+Add code with this format at the top of each item file.
+
+```js
+---
+title: "Demo Item 1"
+description: "Item description"
+heroImage: "Item img url"
+details: true // show or hide details btn
+custom_link_label: "Custom btn link label"
+custom_link: "Custom btn link"
+pubDate: "Sep 15 2022"
+pricing: "$15"
+oldPricing: "$25.5"
+badge: "Featured"
+checkoutUrl: "https://checkouturl.com/"
+---
+```
+
+#### Static pages
+
+The other pages included in the template are static pages. The `index` page belongs to the root page. You can add your pages directly in the `/pages` folder and then add a link to those pages in the `sidebar` component.
+
+Feel free to modify the content included in the pages that the template contains or add the ones you need.
+
+### Theming
+
+To change the template theme change the `data-theme` attribute of the `<html>` tag in `BaseLayout.astro` file.
+
+You can choose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
+
+## Sitemap
+
+The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
+
+## Deploy
+
+You can deploy your site on your favourite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
+
+The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
+
+> **⚠️ CAUTION** </br>
+> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+
+## Contributing
+
+Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+
+One of the best ways to contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astrofy/issues) that has been marked `accepted` and dig in.
+
+Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+
+## License
+
+Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
+
+## Contributors
+
+<a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).

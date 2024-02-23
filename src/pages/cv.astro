@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Nhan H.T. Luong (Len)</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    My interest lies in the intersection of computer science, astronomy, and (astro)physics. Within the field of
+computer science, my primary interests are within <b>visual computing</b> (computational imaging, computer vision,
+computer graphics, visualization) as well as <b>data-intensive science</b> (numerical methods, simulation, data
+processing, machine learning, deep learning).
+I am also passionate about teaching and inspiring new generation of scientists and engineers by cultivating their
+love for science and technology.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Bachelor of Computer Science (Honours)"
+      subtitle="2021 - 2022 @ Monash University, Melbourne, Australia"
+    >
+    GPA: 4.0 / 4.0 | First Class Honours
+    </TimeLineElement>
+    <TimeLineElement
+      title="Bachelor of Computer Science in Advanced Computer Science"
+      subtitle="2018 - 2021 @ Monash University, Melbourne, Australia"
+    >
+      GPA: 3.6 / 4.0 | High Distinction
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Research Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Research Assistant — Security and Artificial Intelligence Lab"
+      subtitle="Oct 2023 - Present @ VinUniversity, Hanoi, Vietnam"
+    >
+    <u><em>Survey on practicality of federated learning in IoT:</em></u> Gained a grasp of benefits, challenges applications, of federated learning and current state-of-the-art. Conducted
+    literature survey and designed taxonomy of contemporary federated learning landscape in communication efficiency
+    perspective.
+    
+    </TimeLineElement>
+    <TimeLineElement
+      title="Research Assistant — Center for Environmental Intelligence"
+      subtitle="Oct 2022 - Oct 2023 @ VinUniversity, Hanoi, Vietnam"
+    >
+    <u><em>AI for MOF material discovery project (in collaboration with UC Berkeley & Monash University):</em></u> Developed image recognition system and web application for fast batch crystal detection from automated
+    microscopy images of high-throughput chemistry experiments. Implemented, trained, and conducted performance
+    benchmark of state-of-the-art image classification methods (architectures, augmentations, regularization) on our
+    new dataset of metal-organic framework crystals (MOFs) images. <br>
+    <u><em>Inverse design for nanophotonics metasurface material topology optimization:</em></u> Conducted literature review to identify current trends in nanophotonics material inverse design using deep neural
+    networks. Led an initiative to investigate practicality of applying published methods for finding materials with
+    desired optical properties via topological optimization. <br>
+    <u><em>Spatial lifetime mapping of perovskite quantum dots coupled with a dielectric metasurface:</em></u> Operated fluorescence lifetime imaging system, and processed and analyzed measurement data. Applied
+    time-correlated single photon counting to determine photon lifetime of perovskite quantum dots on metasurface. <br>
+    </TimeLineElement>
+  <TimeLineElement
+      title="Research Scholarship — Immersive Analytics Lab"
+      subtitle="Nov 2021 - Mar 2022 @ Monash University, Melbourne, Australia"
+    >
+    <u><em>Hand gesture capture for interactive data analytics:</em></u> Continued developing a web application to record intuitive hand gestures for data exploration and navigation in
+    real-world space.
+    
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Work Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+    title="Teaching Assistant"
+    subtitle="Oct 2022 - Present @ VinUniversity, Hanoi, Vietnam"
+    >
+      COMP4010 - Data Visualization (Spring '24) <br>
+      COMP4010 - Computational & Algorithmic Thinking (Spring '24) <br>
+      COMP1010 & BANA3020 - Introduction to Programming (Fall '22, Fall '23) <br>
+      COMP3010 - Algorithm Design (Spring '23) <br>
+      PHYS2030 - Physics III (Spring '23) <br>
+    </TimeLineElement>
+    <TimeLineElement
+    title="Consultant - Software Engineer (IBL)"
+    subtitle="Jan 2021 - Jun 2021 @ Deloitte Digital, Melbourne, Australia"
+    >
+      Digital consulting and Agile software development experience. <br>
+      Experience with Confluence, JIRA, BitBucket/Git, Azure build pipelines and SonarQube. <br>
+      Developed mobile application with Kotlin, Swift, JavaScript, Postman, AWS S3, AWS Lambda. <br>
+      Developed virtual assistant with Unity, C#, AWS Lex, AWS Polly, AWS Transcribe. <br>
+      Developed interactive AR pegboard with OpenCV, PyQt5, C#, Unity. <br>
+    </TimeLineElement>
+  </div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Awards & Honours</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <b> Teaching Assistant with Outstanding Contribution (VinUniversity, 2024):</b> Awarded to 6 Teaching Assistants who made outstanding contribution teaching and supporting student learning.
+    </li>
+    <li>
+      <b> Teaching Excellence Award (VinUniversity, 2023):</b> Awarded to 2 Teaching Assistant and 8 Faculty members who were nominated by
+      colleagues and students for delivering excellence in teaching and supporting student learning.
+    </li>
+    <li>
+      <b> Undergraduate Vacation Research Scholarship (Monash University, 2021):</b> Awarded to undergraduate students who were selected take part
+      in research projects at Monash University over a vacation period.
+    </li>
+    <li>
+      <b> Information Technology IBL Placement Scholarship (Monash University, 2021):</b> Awarded to undergraduate students after a highly selective
+      multi-round interview process to work at a partner organization as a full-time graduate-level employee for one semester.
+    </li>
+    <li>
+      <b> Information Technology International Merit Scholarship (3 years) (Monash University, 2021):</b> Awarded to incoming international
+      students with outstanding academic background and achievements.
+    </li>
+  </ul>
+
+  <!-- <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+  </ul> -->
+</BaseLayout>
