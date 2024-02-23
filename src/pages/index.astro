@@ -13,17 +13,26 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Len</div>
-    <div class="text-3xl py-3 font-bold">Aspiring Computational Scientist</div>
+    <div class="text-3xl py-3 font-bold">A Computer Science Graduate</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>The Onominute</b>, a collection of my documentation and notes for learning various scientific topics. The name itself refers to the average number of times I realized my mistakes while learning a new topic, in a single sitting.
+        <p>
+          My name is Nhan Luong, but most people call me Len! I graduated from Monash University with an Honours degree in Computer Science. I am currently a research assistant and teaching assistant at VinUniversity. My current work is broadly in the realm of <b>AI4Science</b>.
+        </p>
+        <p class="py-2">
+          I am passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology. I am also an aspiring computational scientist with a research interest that lies in the intersection of computer science, astronomy, and (astro)physics. Within the field of computer science, my primary interests are within <b>visual computing</b> (computational imaging, computer vision, computer graphics, visualization) as well as <b>data-intensive science</b> (numerical methods, simulation, data processing, machine learning, deep learning). I'm also passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology.
+        </p>
+        <p class="py-2">
+          Outside of research, I enjoy reading and learning about sciences, philosophy, and visual arts. I'm a hobbyist photographer, with a particular interest in still life, pets, and street photography. I have two cats, Cam and Chanh, and you can find them <u><a href="https://www.instagram.com/cameowra.roll/">here</a></u>.
+        </p>
+        
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn btn-outline" href="https://twitter.com/len_luong09" target="_blank"> Let's connect!</a>
+      <!-- <a href="https://twitter.com/len_luong09" target="_blank" class="btn btn-outline ml-5">
+        Let's connect!
+      </a> -->
     </div>
   </div>
 
@@ -55,9 +64,11 @@ const last_posts = posts.slice(0, 3);
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Recent blog posts</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10"><a  href="/blog/">The Onominute</a></div>
   </div>
-
+  <text class="text-lg">
+    This is <a  href="/blog/"><b>The Onominute</b></a>, a collection of my documentation and notes for learning various scientific topics. The name itself refers to the average number of times I realized my mistakes while learning a new topic, in a single sitting.
+  </text>
   {
     last_posts.map((post) => (
       <>
