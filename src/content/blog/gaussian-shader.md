@@ -1,10 +1,10 @@
 ---
 title: "2D Gaussian Shader in Unity"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+description: "During the very early stages of my thesis project, I was working on having the individual particles data visualised in Unity with IATK. Having the points show up is trivial, but having them rendered in a way that is visually meaningful is a bit more complicated. Eventually, I would have the particles being rendered as a continuos surface with the proper SPH kernel but just to get started, my supervisor suggested we implement a simple Gaussian alpha shader to each particle using its own smoothing length `h`."
 pubDate: "Sep 11 2022"
 heroImage: "/images/unity-gaussian-shader/gauss_thumbnail.jpg"
 ---
-> During the very early stages of my thesis project, I was working on having the individual particles data visualised in Unity with [IATK](https://github.com/MaximeCordeil/IATK). Having the points show up is trivial, but having them rendered in a way that is visually meaningful is a bit more complicated. Eventually, I would have the particles being rendered as a continuos surface with the proper [SPH kernel](https://users.monash.edu.au/~dprice/pubs/spmhd/price-spmhd.pdf) but just to get started, my supervisor suggested we implement a simple Gaussian alpha shader to each particle using its own smoothing length `$h$`.
+> During the very early stages of my thesis project, I was working on having the individual particles data visualised in Unity with [IATK](https://github.com/MaximeCordeil/IATK). Having the points show up is trivial, but having them rendered in a way that is visually meaningful is a bit more complicated. Eventually, I would have the particles being rendered as a continuos surface with the proper [SPH kernel](https://users.monash.edu.au/~dprice/pubs/spmhd/price-spmhd.pdf) but just to get started, my supervisor suggested we implement a simple Gaussian alpha shader to each particle using its own smoothing length $h$.
 
 In this post, I will be discussing how I implemented the following Gaussian function to determine the alpha channel of a surface in Unity:
 $$f(x,y) = e^{-\frac{(x-b)^2 + (y-b)^2}{2 \cdot h^2}}$$
@@ -15,7 +15,7 @@ It can be confusing at first when you hear people referring to the term _a Gauss
 $$
 f(x) = a \cdot e^{-\frac{(x-b)^2}{2 \cdot c^2}} = a \cdot \exp(-\frac{(x-b)^2}{2 \cdot c^2})
 $$
-For the above representation of the Gaussian, `$a$` is thought of as the height of the peak for our bell curve, `$b$` will determine the center of our bell curve (how the peak's position it will be translated from the origin) and `$c$` will give us how wide the bell curve will be.
+For the above representation of the Gaussian, $a$ is thought of as the height of the peak for our bell curve, $b$ will determine the center of our bell curve (how the peak's position it will be translated from the origin) and $c$ will give us how wide the bell curve will be.
 ![A Gaussian curve with a=3, b=0 and c=0.5[^1]](/images/unity-gaussian-shader/1.jpg)
 Those who are more familiar with statistics or data science are more likely to recognise it as the probability density function for a _Normal distribution_:
 $$
@@ -25,7 +25,7 @@ As the problem I will be tackling doesn't concern complicated parameters, I will
 $$
 \alpha(x) = \exp(-\frac{(x-d)^2}{2 \cdot h^2})
 $$
-Where the function `$\alpha(x)$` is the value for the alpha channel of our surface shader, which will be in the range `$[0,1]$` and therefore our _peak height_ is `$a=1$`. The center of the distribution is determined by our _offset_ parameter `$d$` and the width of the bell curve is the _smoothing length_ `$h$`.
+Where the function $\alpha(x)$ is the value for the alpha channel of our surface shader, which will be in the range $[0,1]$ and therefore our _peak height_ is $a=1$. The center of the distribution is determined by our _offset_ parameter $d$ and the width of the bell curve is the _smoothing length_ $h$.
 
 ## Introduction to Unity shaders
 
@@ -38,7 +38,7 @@ Now we need to create our Material and Shader files with `Create > Material` and
 To use the Material we've just made on the geometry, simply drag and drop the Material file from the Project window onto the object in the Scene view. Then we still need to apply our shader to the material we've just created, do this by clicking on the Material file in the Project window, in the Inspector, click on the Shader drop down and type in the name of the shader you've just created.
 ![Applying the shader to the material.](/images/unity-gaussian-shader/5.jpg)
 Now, the appearance of the geometry will have changed based on the type of shader script you've just created. For unlit shader, it will be a plain pure white surface. Let's open the shader script by double-clicking on in the Project window. The script should have already filled in with a templated provided by Unity with the necessary components and structures. To understand what each of the sections do, please check out the documentation from Unity[^3].
-The first piece of code we will be changing is the `Properties`. This part contains names and declarations of variables that we will be passing to the GPU from the Inspector, so convenient! I will be adding my `$b$` and `$h$` values as it will be used by the surface shader to calculate the alpha value. I will add a tint to set the surface color of the geometry as well.
+The first piece of code we will be changing is the `Properties`. This part contains names and declarations of variables that we will be passing to the GPU from the Inspector, so convenient! I will be adding my $b$ and $h$ values as it will be used by the surface shader to calculate the alpha value. I will add a tint to set the surface color of the geometry as well.
 
 ```
 # Before:
@@ -101,7 +101,7 @@ SubShader
                 ...
 ```
 
-The types[^5] of these variables might be unfamiliar to you but basically, `float4` is a _vector_ (or you can imagine it as an array) of 4 `float` values, so as `fixed4` - which is a _vector_ of 4 `fixed` values (Lowest precision fixed point value. Generally 11 bits, with a range of –2.0 to +2.0 and 1/256th precision). Notice that our `Color` variable is a `fixed4`, this is because `Color` is essentially a _vector_ representing 4 channels of RGBA with each channel having a value clamped to the range `$[0,1]$`.
+The types[^5] of these variables might be unfamiliar to you but basically, `float4` is a _vector_ (or you can imagine it as an array) of 4 `float` values, so as `fixed4` - which is a _vector_ of 4 `fixed` values (Lowest precision fixed point value. Generally 11 bits, with a range of –2.0 to +2.0 and 1/256th precision). Notice that our `Color` variable is a `fixed4`, this is because `Color` is essentially a _vector_ representing 4 channels of RGBA with each channel having a value clamped to the range $[0,1]$.
 
 ## Time to implement the math
 
@@ -147,18 +147,18 @@ fixed4 frag (v2f i) : SV_Target
     }
 ```
 
-We have a red square on the bottom left quarted of the quad now! I might have cheated a little bit with some foresight by doing this once before, but now we can see that `i.uv` seems to be a vector or more specifically a point `$(x,y)$` on the geometry with their values seemingly also clamped from 0 to 1 with the origin being in the bottom left corner.
+We have a red square on the bottom left quarted of the quad now! I might have cheated a little bit with some foresight by doing this once before, but now we can see that `i.uv` seems to be a vector or more specifically a point $(x,y)$ on the geometry with their values seemingly also clamped from 0 to 1 with the origin being in the bottom left corner.
 ![](/images/unity-gaussian-shader/8.jpg)
 
 Okay, now back to the real math. Let's see what we have to do to get our Gaussian function implemented here. Recall we have the function:
 $$
 \alpha(x) = \exp(-\frac{(x-d)^2}{2 \cdot h^2})
 $$
-This is only for a 1-dimensional value but we need 2 values for `$x$` and `$y$` coordinates. To extend this to 2-dimensions, let's look at where our calculation is dependent on the parameters. Only in `$(x-d)^2$`! This makes it much easier. Now that we are not only shifting on the `$x$` axis but also on the `$y$` axis as well, we need to extend this 1-D relation ship between our axis and our offset to 2-D by changing both of the terms to 2-D: `$x$` becomes a point `$(x,y)$` and `$d$` becomes a vector `$\vec{d} = (d_x,d_y)$`. We need to shift both of the dimensions similarly:
+This is only for a 1-dimensional value but we need 2 values for $x$ and $y$ coordinates. To extend this to 2-dimensions, let's look at where our calculation is dependent on the parameters. Only in $(x-d)^2$! This makes it much easier. Now that we are not only shifting on the $x$ axis but also on the $y$ axis as well, we need to extend this 1-D relation ship between our axis and our offset to 2-D by changing both of the terms to 2-D: $x$ becomes a point $(x,y)$ and $d$ becomes a vector $\vec{d} = (d_x,d_y)$. We need to shift both of the dimensions similarly:
 $$
 \alpha(x,y) = \exp(-(\frac{(x-d_x)^2}{2 \cdot h^2}+\frac{(y-d_y)^2}{2 \cdot h^2})) = \exp(-\frac{(x-d_x)^2 + (y-d_y)^2}{2 \cdot h^2})
 $$
-As we are shifting both dimensions equally by the amount `$b$`, we have the final equation:
+As we are shifting both dimensions equally by the amount $b$, we have the final equation:
 $$
 \alpha(x,y) = \exp(-\frac{(x-b)^2 + (y-b)^2}{2 \cdot h^2})
 $$
