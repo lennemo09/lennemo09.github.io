@@ -1,3 +1,26 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+details {
+    user-select: none;
+    & summary svg {transform: rotate(90deg);}
+  }
+  details[open] {
+    & summary svg {
+      transform: rotate(-90deg);  
+  
+    }
+    
+  }
+  
+  
+  details[open] summary ~ *
+  {	animation: ease-opacity-t-b .5s ease}
+
+  summary {
+    cursor: pointer;
+  }
+  svg {
+    transition: all 0.3s;
+  }

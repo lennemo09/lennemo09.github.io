@@ -17,28 +17,57 @@ const last_posts = posts.slice(0, 3);
     <div class="py-2">
       <text class="text-lg">
         <p>
-          My name is Nhan Luong, but most people call me Len! I graduated from Monash University with an Honours degree in Computer Science. I am currently a research assistant and teaching assistant at VinUniversity. My current work is broadly in the realm of <b>AI4Science</b>.
+          My name is Nhan Luong, but most people call me Len! I graduated from Monash University with an Honours degree in Computer Science and I will start my PhD in Computer Science at the University of Toronto this September. I am currently a research assistant and teaching assistant at VinUniversity. My current work is broadly in the realm of <b>AI4Science</b>.
         </p>
-        <p class="py-2">
-          I am passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology. I am also an aspiring computational scientist with a research interest that lies in the intersection of computer science, astronomy, and (astro)physics. Within the field of computer science, my primary interests are within <b>visual computing</b> (computational imaging, computer vision, computer graphics, visualization) as well as <b>data-intensive science</b> (numerical methods, simulation, data processing, machine learning, deep learning). I'm also passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology.
-        </p>
-        <p class="py-2">
-          Outside of research, I enjoy reading and learning about sciences, philosophy, and visual arts. I'm a hobbyist photographer, with a particular interest in still life, pets, and street photography. I have two cats, Cam and Chanh, and you can find them <u><a href="https://www.instagram.com/cameowra.roll/">here</a></u>.
-        </p>
+        <div class="question-wrap mt-2">
+          <details class="question rounded-lg py-4 px-4 border border-grey-lighter">
+    
+            <summary class="flex items-center font-bold"> About my work
+              <button class="ml-auto">
+              <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+            </button>
+            </summary>
+    
+            <div class="mt-4 leading-normal text-md ">I am passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology. I am also an aspiring computational scientist with a research interest that lies in the intersection of computer science, astronomy, and (astro)physics. Within the field of computer science, my primary interests are within <b>visual computing</b> (computational imaging, computer vision, computer graphics, visualization) as well as <b>data-intensive science</b> (numerical methods, simulation, data processing, machine learning, deep learning). I'm also passionate about teaching and inspiring new generation of scientists and engineers by cultivating their love for science and technology.</div>
+          </details>
+        </div>
+
+        <div class="question-wrap mt-2">
+          <details class="question rounded-lg py-4 px-4 border border-grey-lighter">
+    
+            <summary class="flex items-center font-bold"> Outside of work
+              <button class="ml-auto">
+              <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+            </button>
+            </summary>
+    
+            <div class="mt-4 leading-normal text-md ">Outside of research, I enjoy reading and learning about sciences, philosophy, and visual arts. I'm a hobbyist photographer, with a particular interest in still life, pets, and street photography. I have two cats, Cam and Chanh, and you can find them <a class="btn btn-outline px-1 min-h-0 h-6 p-0" target="_blank" href="https://www.instagram.com/cameowra.roll/">here</a>.</div>
+          </details>
+        </div>
+
         <p class="py-2">
           On this site, you can also find my blog, <em>The Onominute</em>, where I write about various things that I'm learning.
         </p>
-        
       </text>
     </div>
-    <div class="mt-8">
-      <a class="btn btn-outline" href="https://twitter.com/len_luong09" target="_blank"> Let's connect!</a>
+    <div class="mt-2">
+      <a class="btn btn-outline" href="https://twitter.com/len_luong09" target="_blank"> Let's connect</a>
       <a class="btn btn-outline" href="/blog"> My blog</a>
       <a class="btn btn-outline" href="/projects"> Teaching stuff</a>
       <!-- <a href="https://twitter.com/len_luong09" target="_blank" class="btn btn-outline ml-5">
         Let's connect!
       </a> -->
     </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Updates</div>
+
+    <ul class="list-disc mx-6 mb-10 grid gap-2">
+      <li>
+        I have accepted an offer to join the PhD program in Computer Science at the University of Toronto, starting in September 2024! <b>[15/03/2024]</b>
+      </li>
+    </ul>
   </div>
 
   <div>
@@ -64,7 +93,7 @@ const last_posts = posts.slice(0, 3);
   }
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10"><a href="/projects">Projects</a></div>
   </div>
 
   <HorizontalCard
