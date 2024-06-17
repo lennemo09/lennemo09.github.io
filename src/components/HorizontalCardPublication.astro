@@ -1,0 +1,63 @@
+---
+const { title, img, authors, author_index, abstract, url, badge, tags, target = "_blank" } = Astro.props;
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+// let showFullDesc = false;
+// function toggleDescription() {
+//   showFullAbstract = !showFullAbstract;
+// }
+---
+
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
+  <a href={url} target={target}>
+    <div class="hero-content flex-col md:flex-row">
+      {
+        img && (
+          <Image
+            src={img}
+            width={300}
+            height={300}
+            format="webp"
+            alt={title}
+            class="max-w-full md:max-w-[13rem] rounded-lg object-cover"
+          />
+        )
+      }
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {badge && <div class="badge badge-primary">{badge}</div>}
+        </h1>
+        <h1 class="text-xl font-bold">
+          {title}
+        </h1>
+        <p class="py-2 text-md font-regular">
+          {authors.map((author, index) => (
+            <span class={index === author_index ? "font-bold" : ""}>
+              {author}{index < authors.length - 1 ? ', ' : ''}
+            </span>
+          ))}
+        </p>
+        <div class="relative">
+          <p class={"line-clamp-3"}>
+            {abstract}
+          </p>
+          <!-- <button class="text-primary underline" on:click={toggleDescription}>
+            {showFullDesc ? "Read less" : "Read more"}
+          </button> -->
+        </div>
+        <div class="card-actions justify-end">
+          {
+            tags &&
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

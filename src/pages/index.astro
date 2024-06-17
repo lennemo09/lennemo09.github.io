@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import HorizontalCardPublication from "../components/HorizontalCardPublication.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 
@@ -20,7 +21,7 @@ const last_posts = posts.slice(0, 3);
           My name is Luong Ha Tri Nhan (Vietnamese)/Nhan Luong (English), but most people call me Len! I graduated from Monash University with a Bachelor Honours degree in Computer Science in 2022. In September, I will be joining the Toronto Computational Imaging Group to pursue a PhD in Computer Science at the University of Toronto. I am currently a research assistant and teaching assistant at VinUniversity. My current work is broadly in the realm of <b>AI4Science</b>.
         </p>
         <div class="question-wrap mt-2">
-          <details class="question select-text rounded-lg py-4 px-4 border border-grey-lighter">
+          <details class="question select-text rounded-lg py-4 px-4 border border-current">
     
             <summary class="flex items-center font-bold"> Academic interests
               <button class="ml-auto">
@@ -33,7 +34,7 @@ const last_posts = posts.slice(0, 3);
         </div>
 
         <div class="question-wrap mt-2">
-          <details class="question select-text rounded-lg py-4 px-4 border border-grey-lighter">
+          <details class="question select-text rounded-lg py-4 px-4 border border-current">
     
             <summary class="flex items-center font-bold"> Other interests
               <button class="ml-auto">
@@ -53,9 +54,9 @@ const last_posts = posts.slice(0, 3);
       </text>
     </div>
     <div class="mt-2">
-      <a class="btn btn-outline" href="https://twitter.com/len_luong09" target="_blank"> Let's connect</a>
-      <a class="btn btn-outline" href="/blog"> My blog</a>
-      <a class="btn btn-outline" href="/projects"> Teaching stuff</a>
+      <a class="btn btn-outline" href="https://twitter.com/len_luong09" target="_blank"> Let's connect!</a>
+      <a class="btn btn-outline" href="/blog"> Blog</a>
+      <a class="btn btn-outline" href="/projects"> Work</a>
       <!-- <a href="https://twitter.com/len_luong09" target="_blank" class="btn btn-outline ml-5">
         Let's connect!
       </a> -->
@@ -67,10 +68,10 @@ const last_posts = posts.slice(0, 3);
 
     <ul class="list-disc mx-6 mb-10 grid gap-2">
       <li>
-        Our survey preprint titled <b>"Exploring the Practicality of Federated Learning: A Survey Towards the Communication Perspective"</b> is now <a href="https://arxiv.org/pdf/2405.20431" class="font-medium underline hover:no-underline">available on arXiv</a>! <b>[30/05/2024]</b>
+        Our survey preprint <a href="https://arxiv.org/pdf/2405.20431" class="font-medium underline hover:no-underline"><b>Exploring the Practicality of Federated Learning: A Survey Towards the Communication Perspective</b></a> is now available on arXiv! <b>[30/05/2024]</b>
       </li>
       <li>
-        Our <a href="https://opg.optica.org/abstract.cfm?uri=ol-49-9-2465" class="font-medium underline hover:no-underline">paper</a> submitted to Optics Letters has been published! And along with it I now have a <a href="https://scholar.google.com/citations?user=RMF97_IAAAAJ&hl=en" class="font-medium underline hover:no-underline">Google Scholar</a> page :) <b>[01/05/2024]</b>
+        Our paper <a href="https://opg.optica.org/abstract.cfm?uri=ol-49-9-2465" class="font-medium underline hover:no-underline"><b>Spatial photoluminescence and lifetime mappings of quasi-2D perovskites coupled with a dielectric metasurface</b></a> has been published on Optics Letters! And along with it I now have a <a href="https://scholar.google.com/citations?user=RMF97_IAAAAJ&hl=en" class="font-medium underline hover:no-underline">Google Scholar</a> page :) <b>[01/05/2024]</b>
       </li>
       <li>
         I will be joining the University of Toronto as PhD student in Computer Science, starting September 2024! <b>[15/03/2024]</b>
@@ -101,7 +102,31 @@ const last_posts = posts.slice(0, 3);
   }
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10"><a href="/projects">Projects</a></div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10"><a href="/projects">Publications</a></div>
+  </div>
+
+  <HorizontalCardPublication
+    badge="Preprint"
+    title="Exploring the Practicality of Federated Learning: A Survey Towards the Communication Perspective"
+    authors={["Khiem Le*", "Nhan Luong-Ha*", "Manh Nguyen-Duc", "Danh Le-Phuoc", "Cuong Do", "Kok-Seng Wong"]}
+    author_index={1}
+    img="/images/projects/fl_taxonomy.png"
+    abstract="Federated Learning (FL) is a promising paradigm that offers significant advancements in privacy-preserving, decentralized machine learning by enabling collaborative training of models across distributed devices without centralizing data. However, the practical deployment of FL systems faces a significant bottleneck: the communication overhead caused by frequently exchanging large model updates between numerous devices and a central server. This communication inefficiency can hinder training speed, model performance, and the overall feasibility of real-world FL applications. In this survey, we investigate various strategies and advancements made in communication-efficient FL, highlighting their impact and potential to overcome the communication challenges inherent in FL systems. Specifically, we define measures for communication efficiency, analyze sources of communication inefficiency in FL systems, and provide a taxonomy and comprehensive review of state-of-the-art communication-efficient FL methods. Additionally, we discuss promising future research directions for enhancing the communication efficiency of FL systems. By addressing the communication bottleneck, FL can be effectively applied and enable scalable and practical deployment across diverse applications that require privacy-preserving, decentralized machine learning, such as IoT, healthcare, or finance."
+    url="https://arxiv.org/pdf/2405.20431"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCardPublication
+    badge="Journal"
+    title="Spatial photoluminescence and lifetime mappings of quasi-2D perovskites coupled with a dielectric metasurface"
+    authors={["Hai Xuan Son Bui", "Tuyet Thi Doan", "Nhan Ha Tri Luong", "Dang Khue Luu", "Ha Thi Thu Do", "Linh Ha Chu", "Duong Pham", "Oanh Thi Kim Vu", "Son Tung Bui", "Thuat Tran Nguyen", "Xuan Khuyen Bui", "Dinh Lam Vu", "Hai Son Nguyen", "Tung Son Ha", "Quynh Le-Van"]}
+    author_index={2}
+    img="/images/projects/optics_letter_thumbnail.jpg"
+    abstract="Light–matter interaction between quantum emitters and optical cavities plays a vital role in fundamental quantum photonics and the development of optoelectronics. Resonant metasurfaces are proven to be an efficient platform for tailoring the spontaneous emission (SE) of the emitters. In this work, we study the interplay between quasi-2D perovskites and dielectric TiO2 metasurfaces. The metasurface, functioning as an open cavity, enhances electric fields near its plane, thereby influencing the emissions of the perovskite. This is verified through angle-resolved photoluminescence (PL) studies. We also conducted reflectivity measurements and numerical simulations to validate the coupling between the quasi-2D perovskites and photonic modes. Notably, our work introduces a spatial mapping approach to study Purcell enhancement. Using fluorescence lifetime imaging microscopy (FLIM), we directly link the PL and lifetimes of the quasi-2D perovskites in spatial distribution when positioned on the metasurface. This correlation provides unprecedented insights into emitter distribution and emitter–resonator interactions. The methodology opens a new (to the best of our knowledge) approach for studies in quantum optics, optoelectronics, and medical imaging by enabling spatial mapping of both PL intensity and lifetime, differentiating between uncoupled quantum emitters and those coupled with different types of resonators."
+    url="https://opg.optica.org/ol/abstract.cfm?uri=ol-49-9-2465"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10"><a href="/projects">Teaching</a></div>
   </div>
 
   <HorizontalCard
@@ -114,7 +139,7 @@ const last_posts = posts.slice(0, 3);
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Web API & GUI Programming"
-    img="https://file.notion.so/f/f/7f883172-6e59-4b71-aeef-54a46497bccf/69fb67ab-c7a1-4948-a31e-e8cc294e9fb5/Untitled.png?id=219c6538-1a67-4784-a4ef-e15b86e2042e&table=block&spaceId=7f883172-6e59-4b71-aeef-54a46497bccf&expirationTimestamp=1709107200000&signature=HRBxFttQeLTTnbGQgy0Z0piLQHp2ROKBhTzAeFx5sfA&downloadName=Untitled.png"
+    img="https://file.notion.so/f/f/7f883172-6e59-4b71-aeef-54a46497bccf/69fb67ab-c7a1-4948-a31e-e8cc294e9fb5/Untitled.png?id=219c6538-1a67-4784-a4ef-e15b86e2042e&table=block&spaceId=7f883172-6e59-4b71-aeef-54a46497bccf&expirationTimestamp=1718726400000&signature=JpUAThJ5lIkxkGR6FKo0pKQxPLCkAXwsgvd9tjoXgjM&downloadName=Untitled.png"
     desc="Content for my Web API + GUI lecture for Introduction to Programming (COMP1010) course at VinUniversity."
     url="https://tricolor-riddle-c08.notion.site/Introduction-to-GUI-Programming-with-Python-Tkinter-and-Public-Web-APIs-2834f6bcca264029864e1b08e7676340"
     badge="Teaching"
