@@ -126,6 +126,15 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <HorizontalCardPublication
+    badge="Preprint (Accepted MICCAI 2024)"
+    title="Training-Free Condition Video Diffusion Models for single frame Spatial-Semantic Echocardiogram Synthesis"
+    authors={["Van Phi Nguyen", "Tri Nhan Luong Ha", "Huy Hieu Pham", "Quoc Long Tran"]}
+    author_index={1}
+    img="/images/projects/miccai.jpg"
+    abstract="Conditional video diffusion models (CDM) have shown promising results for video synthesis, potentially enabling the generation of realistic echocardiograms to address the problem of data scarcity. However, current CDMs require a paired segmentation map and echocardiogram dataset. We present a new method called Free-Echo for generating realistic echocardiograms from a single end-diastolic segmentation map without additional training data. Our method is based on the 3D-Unet with Temporal Attention Layers model and is conditioned on the segmentation map using a training-free conditioning method based on SDEdit. We evaluate our model on two public echocardiogram datasets, CAMUS and EchoNet-Dynamic. We show that our model can generate plausible echocardiograms that are spatially aligned with the input segmentation map, achieving performance comparable to training-based CDMs. Our work opens up new possibilities for generating echocardiograms from a single segmentation map, which can be used for data augmentation, domain adaptation, and other applications in medical imaging."
+    url="https://arxiv.org/abs/2408.03035"
+  />
+  <HorizontalCardPublication
     badge="Preprint"
     title="Exploring the Practicality of Federated Learning: A Survey Towards the Communication Perspective"
     authors={["Khiem Le*", "Nhan Luong-Ha*", "Manh Nguyen-Duc", "Danh Le-Phuoc", "Cuong Do", "Kok-Seng Wong"]}
