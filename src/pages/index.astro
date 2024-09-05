@@ -5,6 +5,7 @@ import HorizontalCardPublication from "../components/HorizontalCardPublication.a
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 import { Code } from "astro:components";
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -15,11 +16,11 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Len!</div>
-    <div class="text-3xl py-3 font-bold">Incoming CS PhD Student at U of T</div>
+    <div class="text-3xl py-3 font-bold">CS PhD Student at U of T</div>
     <div class="py-2">
       <text class="text-lg">
         <p>
-          My name is <span class="tooltip focus:ring-4 focus:outline-none focus:ring-current bg-gray-50 hover:bg-gray-10 rounded-md py-0 px-1 border border-gray-200 hover:border-gray-100" data-tip="🌎 First: Nhan | Last: Luong">Luong Ha Tri Nhan (🇻🇳)</span>, but most people call me Len! I graduated from Monash University with a Bachelor Honours degree in Computer Science in 2022. In September, I will be joining the <a class="link" target="_blank" href="https://compimaging.dgp.toronto.edu/">Toronto Computational Imaging Group</a> to pursue a PhD in Computer Science at the University of Toronto. I am currently a research assistant and teaching assistant at VinUniversity. My current work is broadly in the realm of <b>AI4Science</b>.
+          My name is <span class="tooltip focus:ring-4 focus:outline-none focus:ring-current bg-gray-50 hover:bg-gray-10 rounded-md py-0 px-1 border border-gray-200 hover:border-gray-100" data-tip="🌎 First: Nhan | Last: Luong">Luong Ha Tri Nhan (🇻🇳)</span>, but most people call me Len! I graduated from Monash University with a Bachelor Honours degree in Computer Science in 2022. I was fortunate to join the <a class="link" target="_blank" href="https://compimaging.dgp.toronto.edu/">Toronto Computational Imaging Group</a> to start my PhD journey in September 2024. My current work is broadly in the realm of <b>differentiable radiative transport for astronomical imaging</b>.
         </p>
 
         <div tabindex="0" class="collapse my-2 collapse-arrow rounded-lg border border-current">
@@ -36,6 +37,7 @@ const last_posts = posts.slice(0, 3);
           <div class="collapse-content">
             <div class="mt-4 leading-normal text-md ">Outside of research, I enjoy reading and learning about sciences, philosophy, and visual arts. I'm a hobbyist photographer, with a particular interest in still life, pets, and street photography.</div>
             <div class="mt-4 leading-normal text-md ">I have two cats, <span class="tooltip" data-tip="Cam (as in camera 📸, but is also 🇻🇳 for orange 🍊) and Chanh (🇻🇳 for lemon 🍋). It's a quirky double word play which was absolutely not intentional.">Cam and Chanh</span>, and you can find them <a class="btn btn-outline px-1 min-h-0 h-6 p-0" target="_blank" href="https://www.instagram.com/cameowra.roll/">here</a>.</div>
+            <Image class="mt-4 mask rounded-3xl" format="webp" width={650} height={350} src="/camchanh.jpg" alt="Cam (right) & Chanh (left)" />
             <div class="mt-4 leading-normal text-md ">When I have the chance, you'll probably find me underwater! I love scuba diving and freediving (fun fact: I got to see a whaleshark on my second ever dive)! I'm also enthusiastic for casual badminton matches here and there (though I'm not very good). Archery is next on my adventure list! </div>
           </div>
         </div>
@@ -88,7 +90,7 @@ const last_posts = posts.slice(0, 3);
 
     <ul class="list-disc mx-6 mb-10 grid gap-2">
       <li>
-        <b>[30/06/17]</b> Our paper <a target="_blank" href="https://arxiv.org/abs/2408.03035" class="font-medium underline hover:no-underline"><b>Training-Free Condition Video Diffusion Models for single frame Spatial-Semantic Echocardiogram Synthesis</b></a> has been accepted to MICCAI 2024! The preprint is also now available on arXiv. 
+        <b>[17/06/24]</b> Our paper <a target="_blank" href="https://arxiv.org/abs/2408.03035" class="font-medium underline hover:no-underline"><b>Training-Free Condition Video Diffusion Models for single frame Spatial-Semantic Echocardiogram Synthesis</b></a> has been accepted to MICCAI 2024! The preprint is also now available on arXiv. 
       </li>
       <li>
         <b>[30/05/24]</b> Our survey preprint <a target="_blank" href="https://arxiv.org/abs/2405.20431" class="font-medium underline hover:no-underline"><b>Exploring the Practicality of Federated Learning: A Survey Towards the Communication Perspective</b></a> is now available on arXiv! 
